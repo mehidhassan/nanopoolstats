@@ -1,5 +1,6 @@
 <?php
 // Change your ETH address.
+//Not modify, please.
 $url = "https://api.nanopool.org/v1/eth/user/0xfd286e89f240e9d03bcbb547bb0ac936dfec8ec4";
 $url2 = "https://api.nanopool.org/v1/eth/balance/0xfd286e89f240e9d03bcbb547bb0ac936dfec8ec4";
 $url3 = "https://api.nanopool.org/v1/eth/usersettings/0xfd286e89f240e9d03bcbb547bb0ac936dfec8ec4";
@@ -7,7 +8,7 @@ $url4 = "https://api.nanopool.org/v1/eth/network/lastblocknumber";
 $url5 = "https://api.nanopool.org/v1/eth/pool/hashrate";
 $url6 = "https://api.nanopool.org/v1/eth/pool/activeworkers";
 $url7 = "https://api.nanopool.org/v1/eth/pool/activeminers";
-
+//Not modify, please.
 $contents7 = file_get_contents($url7);
 $contents6 = file_get_contents($url6);
 $contents5 = file_get_contents($url5);
@@ -15,6 +16,8 @@ $contents4 = file_get_contents($url4);
 $contents3 = file_get_contents($url3);
 $contents2 = file_get_contents($url2);
 $contents = file_get_contents($url);
+
+//Not modify, please.
 $api1=json_decode($contents);
 $api2=json_decode($contents2);
 $api3=json_decode($contents3);
@@ -23,6 +26,8 @@ $api5=json_decode($contents5);
 $api6=json_decode($contents6);
 $api7=json_decode($contents7);
 
+
+//Not modify, please.
 $lastblocknumber=$api4->data;
 $hashrateworld=$api5->data;
 $activeworkerssworld=$api6->data;
@@ -37,10 +42,10 @@ $hashrate3=$api1->data->avgHashrate->h6;
 $hashrate4=$api1->data->avgHashrate->h12;
 $hashrate5=$api1->data->avgHashrate->h24;
 
-file_put_contents('mehid.txt', var_export($balance, true));
+// Balance in txt for cronjob...
+file_put_contents('balance.txt', var_export($balance, true));
 
-
-
+// Date for website
 $date = date("j F Y, g:i:s");
 
 ?>
